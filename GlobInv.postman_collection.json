@@ -1,0 +1,1071 @@
+{
+	"info": {
+		"_postman_id": "6bad4f2c-2806-482b-9eff-4ff928c1b739",
+		"name": "GlobInv Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"shashwat\",\n\t\"password\": \"asdf\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/api/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "images",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiNmNhNTQ0OTctNjRhNy00MDNlLWIzZDYtZGFhYTRiNDQwMTllIiwiaWF0IjoxNTg0NjU0MzAzLCJleHAiOjE1ODQ2NjE1MDN9.1LTHqw8JOSeAH099f060e4xRHMHOAUNEd2U_InAsfO4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Shashwat Sanket/Desktop/34893157.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:7000/api/images",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"images"
+					]
+				},
+				"description": "For uploading images "
+			},
+			"response": []
+		},
+		{
+			"name": "categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "categories ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiNmY1Yjc1NmUtMmVhNC00ODg4LTg0OTgtNWIyNmY3NmNjYjdlIiwiaWF0IjoxNTg0NjgyMjA3LCJleHAiOjE1ODQ2ODk0MDd9.5-OWDA4y0TGap5R9FODbwGZcuT6RbINeSL5G6OFg-z4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"categoryId\": \"INV1012\",\r\n  \"name\": \"Macbooks\",\r\n  \"gstSlabId\": \"GST02\",\r\n  \"parentCategory\": \"INV1010\",\r\n  \"productProps\": {\r\n    \"CPUType\": [\r\n      \"Intel Core i5\",\r\n      \"Intel Core i7\",\r\n      \"Intel Core i3\",\r\n      \"AMD E-Series\"\r\n    ],\r\n    \"memorySize\": [\r\n      \"Up to 2GB\",\r\n      \"4GB\",\r\n      \"6GB\"\r\n    ]\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/api/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"categories"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "categories/{categoryId}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiNmY1Yjc1NmUtMmVhNC00ODg4LTg0OTgtNWIyNmY3NmNjYjdlIiwiaWF0IjoxNTg0NjgyMjA3LCJleHAiOjE1ODQ2ODk0MDd9.5-OWDA4y0TGap5R9FODbwGZcuT6RbINeSL5G6OFg-z4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/api/categories/INV1011",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"categories",
+						"INV1011"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "categories/{categoryId}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiNmY1Yjc1NmUtMmVhNC00ODg4LTg0OTgtNWIyNmY3NmNjYjdlIiwiaWF0IjoxNTg0NjgyMjA3LCJleHAiOjE1ODQ2ODk0MDd9.5-OWDA4y0TGap5R9FODbwGZcuT6RbINeSL5G6OFg-z4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Men's Fashion\",\r\n  \"gstSlabId\": \"GST01\",\r\n  \"parentCategory\": null,\r\n  \"productProps\": {}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/api/categories/INV1201",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"categories",
+						"INV1201"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"productSKU\": \"hew534ss23ds21\",\r\n    \"name\": \"HP 15\",\r\n    \"categoryId\": \"INV1011\",\r\n    \"stock\": 50,\r\n    \"price\": 18322,\r\n    \"keywords\": [\"keyword1\", \"keyword2\"],\r\n    \"imageURIs\": [],\r\n    \"brandId\": \"BR101\",\r\n    \"availability\": \"online\",\r\n    \"ratings\": 4.4,\r\n    \"suppliers\": [\"SP101\"],\r\n    \"specifications\": [\r\n      \"Processor: 8th Generation Intel Core i5-8265U processor, 6 MB cache, 4 cores\",\r\n      \"OS: Pre-loaded Windows 10 Home\",\r\n      \"Display: 14-inch HD (1366x768) display\"\r\n    ],\r\n    \"CPUType\": \"Intel Core i5\",\r\n    \"memorySize\": \"6GB\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products/{productSKU}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/api/products/hew534ss23ds21",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"products",
+						"hew534ss23ds21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products/{productSKU}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productSKU\": \"hew534ss23ds21\",\r\n    \"name\": \"HP 15\",\r\n    \"categoryId\": \"INV1011\",\r\n    \"stock\": 50,\r\n    \"price\": 18322,\r\n    \"keywords\": [\r\n        \"keyword1\",\r\n        \"keyword2\"\r\n    ],\r\n    \"imageURIs\": [],\r\n    \"brandId\": \"BR101\",\r\n    \"availability\": \"online\",\r\n    \"ratings\": 4.4,\r\n    \"suppliers\": [\r\n        \"SP101\"\r\n    ],\r\n    \"specifications\": [\r\n        \"Processor: 8th Generation Intel Core i5-8265U processor, 6 MB cache, 4 cores\",\r\n        \"OS: Pre-loaded Windows 10 Home\",\r\n        \"Display: 14-inch HD (1366x768) display\"\r\n    ],\r\n    \"CPUType\": \"Intel Core i7\",\r\n    \"memorySize\": \"6GB\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/api/products/hew534ss23ds21",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"products",
+						"hew534ss23ds21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "brands",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/api/brands",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"brands"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "brands",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"brandId\": \"BR111\",\r\n\t\"name\": \"HP\",\r\n\t\"website\": \"www.denimcloths.com\",\r\n\t\"email\": \"info@denimcloths.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/api/brands",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"brands"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "brands/{brandId}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/api/brands/BR111",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"brands",
+						"BR111"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "brands/{brandId}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"brandId\": \"BR111\",\r\n    \"name\": \"HP1\",\r\n    \"website\": \"www.denimcloths.com\",\r\n    \"email\": \"info@denimcloths.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/api/brands/BR111",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"brands",
+						"BR111"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "brands",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/api/brands/BR111",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"brands",
+						"BR111"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/api/products/hew534ss23ds21",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"products",
+						"hew534ss23ds21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "categories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/api/categories/INV1012",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"categories",
+						"INV1012"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "suppliers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/api/suppliers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"suppliers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "suppliers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"supplierId\": \"SP111\",\r\n\t\"name\": \"Express shippings\",\r\n\t\"address\": \"Sector-1A, Chennai\",\r\n\t\"email\": \"info@expressshippings.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/api/suppliers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"suppliers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "suppliers/{supplierId}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"supplierId\": \"SP111\",\r\n\t\"name\": \"Express\",\r\n\t\"address\": \"Sector-1A, Chennai\",\r\n\t\"email\": \"info@expressshippings.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/api/suppliers/SP111",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"suppliers",
+						"SP111"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "suppliers/{supplierId}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/api/suppliers/SP111",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"suppliers",
+						"SP111"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "suppliers/{supplierId}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"supplierId\": \"SP111\",\r\n\t\"name\": \"Express\",\r\n\t\"address\": \"Sector-1A, Chennai\",\r\n\t\"email\": \"info@expressshippings.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/api/suppliers/SP111",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"suppliers",
+						"SP111"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "offers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/api/offers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"offers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "offers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productSKU\": \"fjjshe32sadkrer3\",\r\n    \"name\": \"Summer Sale\",\r\n    \"discountRate\": 50,\r\n    \"expiry\": \"2020-06-30T18:30:00.000Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/api/offers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"offers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "offers/{productSKU}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/api/offers/fjjshe32sadkrer3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"offers",
+						"fjjshe32sadkrer3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "offers/{productSKU}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productSKU\": \"fjjshe32sadkrer3\",\r\n    \"name\": \"Summer Sale\",\r\n    \"discountRate\": 75,\r\n    \"expiry\": \"2020-06-30T18:30:00.000Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/api/offers/fjjshe32sadkrer3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"offers",
+						"fjjshe32sadkrer3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "offers/{productSKU}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/api/offers/fjjshe32sadkrer3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"offers",
+						"fjjshe32sadkrer3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gstslabs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"gstSlabId\": \"GST02\",\r\n            \"name\": \"Clothing\",\r\n            \"rate\": 5.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/api/gstslabs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"gstslabs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gstslabs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/api/gstslabs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"gstslabs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gstslabs{gstslabId}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlcjEiLCJ1c2VybmFtZSI6InNoYXNod2F0IiwicGFzc3dvcmQiOiJhc2RmIiwidXNlclR5cGUiOiJhZG1pbiIsImlkIjoiZGMyMDc4YmYtMWZlMy00ZjJkLTk3MjMtNjJhNDRjOGY0YTUwIiwiaWF0IjoxNTg0NzI5OTk4LCJleHAiOjE1ODQ3MzcxOTh9.Cr_z7ze3mOf3o6A0H1-w9uGV0pizmrs5ZeopwbBBNLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"gstSlabId\": \"GST02\",\r\n            \"name\": \"Clothing\",\r\n            \"rate\": 5.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/api/gstslabs/GST02",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"gstslabs",
+						"GST02"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"protocolProfileBehavior": {}
+}
