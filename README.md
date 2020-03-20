@@ -26,6 +26,13 @@ Apart from this, the project has ``validators``, ``const``, ``utils`` and ``publ
 + ``utils`` contains ``Generic Errors``, ``Generic Responses``, `Token` generator and validator and ``Image Uploader``.
 + ``public`` contains all the static files.
 
+## Postman API testing
+  + Download ``GlobInv.postman_collection.json`` 
+  + Import it in postman
+
+## Endpoints
+ Refer Swagger Documentation: https://app.swaggerhub.com/apis-docs/S3649/Product-Management-System/1.0.0#/ 
+
 ## TO Do
 + Invoices CRUD operation.
 + Query based filtering.
