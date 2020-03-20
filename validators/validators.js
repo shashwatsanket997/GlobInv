@@ -111,6 +111,8 @@ module.exports.GSTSlab = [
     .custom(rate => {
       if (rate < 0 || rate > 100) {
         throw new Error("Rate cannot be less than 0 or greater than 100");
+      } else {
+        return true;
       }
     })
 ];
@@ -127,7 +129,7 @@ module.exports.Offer = [
     })
     .withMessage("Offer already exists. Prefer Editing it"),
   check("discountRate")
-    .isDecimal()
+    .isNumeric()
     .custom(rate => {
       if (rate < 0 || rate > 100) {
         throw new Error(
@@ -145,6 +147,8 @@ module.exports.Offer = [
       let current = new Date();
       if (date < current) {
         throw new Error("Expiry date should be in future");
+      } else {
+        return true;
       }
     })
 ];

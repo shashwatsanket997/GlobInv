@@ -31,7 +31,7 @@ module.exports.createCategory = async (req, res, next) => {
   }
   try {
     let data = await Category.create(req.body);
-    res.status(200).json(data.prepareResponse());
+    res.status(201).json(data.prepareResponse());
   } catch (err) {
     console.log(err);
     next(err);
@@ -42,7 +42,7 @@ module.exports.getCategoryById = async (req, res, next) => {
   try {
     let id = req.params.categoryId;
     let data = await Category.getById(id);
-    res.status(201).json(data);
+    res.status(200).json(data);
   } catch (err) {
     next(err);
   }
@@ -123,7 +123,7 @@ module.exports.createBrand = async (req, res, next) => {
   }
   try {
     let data = await Brand.create(req.body);
-    res.status(200).json(data.prepareResponse());
+    res.status(201).json(data.prepareResponse());
   } catch (err) {
     next(err);
   }
@@ -133,7 +133,7 @@ module.exports.getBrandById = async (req, res, next) => {
   try {
     let id = req.params.brandId;
     let data = await Brand.getById(id);
-    res.status(201).json(data);
+    res.status(200).json(data);
   } catch (err) {
     next(err);
   }
@@ -214,7 +214,7 @@ module.exports.createSupplier = async (req, res, next) => {
   }
   try {
     let data = await Supplier.create(req.body);
-    res.status(200).json(data.prepareResponse());
+    res.status(201).json(data.prepareResponse());
   } catch (err) {
     next(err);
   }
@@ -224,7 +224,7 @@ module.exports.getSupplierById = async (req, res, next) => {
   try {
     let id = req.params.supplierId;
     let data = await Supplier.getById(id);
-    res.status(201).json(data);
+    res.status(200).json(data);
   } catch (err) {
     next(err);
   }
@@ -305,7 +305,7 @@ module.exports.createGSTSlab = async (req, res, next) => {
   }
   try {
     let data = await GSTSlab.create(req.body);
-    res.status(200).json(data.prepareResponse());
+    res.status(201).json(data.prepareResponse());
   } catch (err) {
     next(err);
   }
@@ -315,7 +315,7 @@ module.exports.getGSTSlabById = async (req, res, next) => {
   try {
     let id = req.params.gstSlabId;
     let data = await GSTSlab.getById(id);
-    res.status(201).json(data);
+    res.status(200).json(data);
   } catch (err) {
     next(err);
   }
@@ -396,7 +396,7 @@ module.exports.createOffer = async (req, res, next) => {
   }
   try {
     let data = await Offer.create(req.body);
-    res.status(200).json(data.prepareResponse());
+    res.status(201).json(data.prepareResponse());
   } catch (err) {
     next(err);
   }
@@ -406,7 +406,7 @@ module.exports.getOfferBySKU = async (req, res, next) => {
   try {
     let id = req.params.productSKU;
     let data = await Offer.getById(id);
-    res.status(201).json(data);
+    res.status(200).json(data);
   } catch (err) {
     next(err);
   }
@@ -487,7 +487,7 @@ module.exports.createReorderPoint = async (req, res, next) => {
   }
   try {
     let data = await ReorderPoint.create(req.body);
-    res.status(200).json(data.prepareResponse());
+    res.status(201).json(data.prepareResponse());
   } catch (err) {
     next(err);
   }
@@ -497,7 +497,7 @@ module.exports.getReorderPoint = async (req, res, next) => {
   try {
     let id = req.params.productSKU;
     let data = await ReorderPoint.getById(id);
-    res.status(201).json(data);
+    res.status(200).json(data);
   } catch (err) {
     next(err);
   }
@@ -569,7 +569,7 @@ module.exports.getProductBySKU = async (req, res, next) => {
   try {
     let id = req.params.productSKU;
     let data = await Product.getById(id);
-    res.status(201).json(data);
+    res.status(200).json(data);
   } catch (err) {
     next(err);
   }
